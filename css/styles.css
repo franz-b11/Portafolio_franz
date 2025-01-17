@@ -1,0 +1,879 @@
+/* styles.css */
+body {
+    font-family: 'Roboto', sans-serif; /* Aplica la fuente Roboto */
+    margin: 0;
+    padding: 0;
+    color: #f4f4f4;
+    background-color: #fbfafb;
+}
+
+header {
+    background-color: rgb(255, 255, 255);
+    color: rgb(32, 0, 0);
+    padding: 1rem 6rem;
+    font-family: 'Roboto', sans-serif; /* Asegura que el encabezado también use Roboto */
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .hero-image {
+    width: 50px; 
+    height: auto; 
+    border-radius: 5px; 
+    background-color: rgba(75, 0, 130, 0.7); /* Fondo morado alrededor de la imagen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil para resaltar la imagen */
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+header a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif; /* Asegura que los enlaces usen Roboto */
+}
+
+header a:hover {
+    color: #8e2f2f;
+}
+
+/*-------------------Perfil------------------*/
+
+#hero {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #D8BFD8; /* Fondo gris claro */
+    color: rgb(0, 0, 0);
+    height: 60vh; /* Ajusta la altura */
+    width: 90%; /* Ancho relativo al contenedor */
+    max-width: 1200px; /* Ancho máximo */
+    margin: 40px auto; /* Centra el cuadro y le da un margen superior e inferior */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transform: translateY(0); /* Elimina el desplazamiento hacia arriba */
+    z-index: 1; /* Asegura que esté por encima de otros elementos */
+}
+
+#hero::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 80%;
+    filter: blur(50px);
+    opacity: 0.51;
+    z-index: 0;
+}
+
+#hero::after {
+    background: #4B0082; /* Color morado profundo */
+    bottom: 10%;
+    right: 28%;
+}
+
+#hero > * {
+    position: relative;
+    z-index: 1; /* Asegura que el contenido esté sobre las manchas */
+}
+
+.hero-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 60px;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.hero-text {
+    letter-spacing: 1px;
+    text-align: left;
+    font-size: 24px;
+    width: 40%;
+    font-family: 'Roboto', sans-serif; /* Aplica la fuente Roboto */
+}
+
+.hero-text h2 {
+    margin: 10px 0;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.hero-text p {
+    margin: 5px 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.hero-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra la imagen */
+    width: 40%;
+    overflow: hidden;
+    border-radius: 50%; /* Hace que el contenedor sea circular */
+    aspect-ratio: 1; /* Asegura que sea un círculo perfecto */
+    background-color: transparent; /* Fondo transparente */
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%); /* Aplica el filtro blanco y negro */
+    transition: all 0.3s ease; /* Transición suave para efectos */
+}
+
+.hero-image:hover {
+    filter: grayscale(0); /* Devuelve el color al pasar el mouse */
+    transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+}
+
+/* Botón actualizado */
+.hero-button {
+    display: grid;
+    place-items: center;
+    background: #e3edf7;
+    padding: 1em; /* Tamaño del relleno interno */
+    border-radius: 8px; /* Bordes redondeados */
+    width: 100px; /* Establece un ancho fijo (puedes cambiar el valor) */
+    box-shadow: 6px 6px 10px -1px #4B0082,
+            -6px -6px 10px -1px #E0E0E0;
+    border: 1px solid rgba(0,0,0,0);
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.hero-button:hover {
+    box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
+    inset -4px -4px 6px -1px rgba(255,255,255,0.7),
+    -0.5px -0.5px 0px rgba(255,255,255,1),
+    0.5px 0.5px 0px rgba(0,0,0,0.15),
+    0px 12px 10px -10px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.1);
+    transform: translateY(0.5em);
+}
+
+.hero-button svg {
+    transition: transform 0.5s;
+}
+
+.hero-button:hover svg {
+    transform: scale(0.9) rotate(360deg);
+    fill: #4B0082;
+}
+
+@media (min-width: 1024px) {
+    .hero-content {
+        width: 70%;
+    }
+
+    .hero-image {
+        width: 25vw;
+        height: 25vw;
+    }
+}
+
+@media (max-width: 768px) {
+    #hero {
+        flex-direction: column;
+    }
+
+    .hero-image {
+        width: 60vw;
+        height: 60vw;
+    }
+
+    .hero-button {
+        width: 80%;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*----------------------------Sobre mi------------------*/
+#about {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 4rem 6rem;
+    border-radius: 10px;
+    margin: 2rem auto 10rem;  /* Aumenta el margin en la parte inferior */
+    max-width: 69%;
+}
+
+
+#about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #000000; 
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #5b1873; 
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+#about p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+#about strong {
+    color: #fcfcfc; 
+    font-weight: bold;
+    background-color: #e4aee4; 
+    padding: 2px 4px; 
+    border-radius: 4px; 
+}
+
+#about:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease-in-out;
+    background-color: #E0E0E0; 
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+
+/*-----cv--------------*/
+/* From Uiverse.io by Codecite */ 
+.anchor {
+text-decoration: none;
+color: #fff;
+display: inline-block;
+font-family: sans-serif;
+font-weight: 600;
+border-radius: 50px;
+border: 2px solid rgba(75, 0, 130, 0.7);
+padding: 14px 40px 13px;
+overflow: hidden;
+position: relative;
+}
+
+.anchor:hover {
+color: #4e484a;
+}
+
+.button_cv a::before {
+position: absolute;
+content: "";
+z-index: 0;
+background-color: #e4aee4;
+left: -5px;
+right: -5px;
+bottom: -5px;
+height: 111%;
+transition: all .3s ease;
+}
+
+.button_cv a:hover::before {
+height: 11%;
+}
+
+.button_cv span {
+position: relative;
+z-index: 2;
+transition: all .3s ease;
+}
+
+
+/*---------------------habilidades------------------*/
+
+#skills {
+    padding: 2rem;
+    background-color: #ffffff; 
+    color: #ffffff; 
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 800px;
+    min-height: 400px;
+    box-shadow: 0 4px 15px #4B0082;
+    text-align: center;
+}
+
+#skills h2 {
+    font-size: 2rem;
+    color: #2C3E50; 
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.skills-slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+}
+
+/* Estilo para los botones animados */
+.arrow {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    border: none;
+    font-size: 16px;
+    background-color: transparent;
+    border-radius: 100px;
+    font-weight: 600;
+    color: #000000;
+    box-shadow: 0 0 0 2px #462e85;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.arrow svg {
+    width: 24px;
+    fill: #462e85;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.left-arrow svg {
+    transform: rotate(-90deg);
+}
+
+.right-arrow svg {
+    transform: rotate(-90deg);
+}
+
+.arrow:hover {
+    box-shadow: 0 0 0 12px transparent;
+    color: #212121;
+    border-radius: 12px;
+}
+
+.arrow:hover svg {
+    fill: #212121;
+}
+
+.arrow:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 4px #4B0082;
+}
+
+.skill-display {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: visible; /* Cambiar de hidden a visible para evitar el recorte */
+    height: 220px; /* Ajusta la altura para dar más espacio */
+    width: 100%;
+    padding-bottom: 20px; /* Espacio adicional en la parte inferior */
+}
+
+.skill-box {
+    display: none;  
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    height: 140px;
+    background-color: #5f1e1e; 
+    color: #f4f4f4;
+    box-shadow: 0 4px 10px #5f1e1e;
+    padding: 1rem;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 50%; 
+    background: #ffffff ;
+    border: 2px solid rgba(80, 48, 48, 0.3); 
+    backdrop-filter: blur(5px); 
+}
+
+.skill-box.active {
+    display: flex; 
+    transform: scale(1.1); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+.skill-box img {
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+}
+
+.skill-box span {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #0a0000; 
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 600px) {
+    .arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .skill-box {
+        width: 120px;
+        height: 120px;
+    }
+
+    .skill-box img {
+        width: 70%;
+    }
+}
+
+/*-------------------------Redes Sociales------------------------*/
+#contact {
+    padding: 2rem;
+    background-color: #ffffff;
+    color: #333333; /* Cambié el color del texto a un tono más oscuro */
+    border-radius: 10px;
+    margin: 2rem auto;
+    width: 100%;
+    min-height: 300px; /* Aumenté la altura mínima */
+    text-align: center;
+    box-shadow: none;
+    display: flex;            /* Flexbox para centrar el contenido */
+    flex-direction: column;   /* Apilar los elementos verticalmente */
+    justify-content: center;  /* Centrar verticalmente */
+    align-items: center;      /* Centrar horizontalmente */
+}
+
+#contact h2 {
+    font-size: 2rem;
+    color: #4B0082;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid #ffffff;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-section p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    max-width: 700px; /* Limita el ancho del texto a 700px */
+    width: 100%; /* Ocupa el 100% de su contenedor hasta alcanzar el máximo */
+    margin: 0 auto; /* Centra el párrafo */
+    padding: 0 15px; /* Añade un pequeño espaciado a los lados */
+}
+
+.example-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Espaciado entre los botones */
+    flex-wrap: wrap; /* Permitir que los botones se acomoden si no caben */
+}
+
+.example-2 .icon-content {
+    position: relative;
+    width: 60px;
+    height: 60px;
+}
+
+.example-2 .icon-content .tooltip {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 15px;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.example-2 .icon-content:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    top: -50px;
+}
+
+.example-2 .icon-content a {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 20%;
+    color: #4d4d4d;
+    background-color: #ffff;
+    transition: all 0.3s ease-in-out;
+}
+
+.example-2 .icon-content a:hover {
+    box-shadow: 3px 2px 45px 0px rgba(220, 26, 26, 0.5);
+    color: white;
+}
+
+.example-2 .icon-content a svg {
+    position: relative;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+}
+
+.example-2 .icon-content a .filled {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #ff0073; /* Color predeterminado */
+    transition: all 0.3s ease-in-out;
+}
+
+.example-2 .icon-content a:hover .filled {
+    height: 100%;
+}
+
+/* Especificar el color para cada red social */
+.example-2 .icon-content a[data-social="twitter"] .filled {
+    background-color: #8c9abe; /* Twitter */
+}
+
+.example-2 .icon-content a[data-social="whatsapp"] .filled {
+    background-color: #25D366; /* WhatsApp */
+}
+
+.example-2 .icon-content a[data-social="email"] .filled {
+    background-color: #c938e2; /* Email */
+}
+
+.example-2 .icon-content a[data-social="instagram"] .filled {
+    background-color: #E4405F; /* Instagram */
+}
+
+/* Tooltip */
+.example-2 .icon-content a[data-social="twitter"] ~ .tooltip {
+    background-color: #8c9abe; /* Twitter */
+}
+
+.example-2 .icon-content a[data-social="whatsapp"] ~ .tooltip {
+    background-color: #25D366; /* WhatsApp */
+}
+
+.example-2 .icon-content a[data-social="email"] ~ .tooltip {
+    background-color: #c938e2; /* Email */
+}
+
+.example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
+    background-color: #E4405F; /* Instagram */
+}
+
+/*--------------- proyectos ---------------*/
+
+#proyectos h2 {
+    color: #010003;
+    font-size: 2em;
+    margin-bottom: 20px;
+    position: absolute;
+    top: -90px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 8px;
+    z-index: 2;
+}
+
+#proyectos {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    height: auto;
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto 5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en filas si es necesario */
+}
+
+#proyectos h3 {
+    color: #010003;
+    font-size: 2em;
+    padding: 5px 10px;
+    border-radius: 8px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+.proyectos h3 svg {
+    margin-left: 10px; /* Espacio entre el texto y el icono */
+    width: 20px; /* Puedes ajustar el tamaño */
+    height: 20px;
+}
+
+.texto-y-carousel {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap; /* Permite que el contenido se ajuste en pantallas pequeñas */
+}
+
+.texto {
+    flex: 1;
+    padding-right: 80px;
+    text-align: center;
+    max-width: 600px; /* Controla el ancho del texto */
+    margin: 0 auto ;
+}
+
+.tesis_descripcion {
+    font-size: 1em;
+    color: #000000;
+    line-height: 2.5;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%; /* Cambiado a 100% para que el carrusel ocupe todo el ancho disponible */
+    max-width: 300px; /* Establece un ancho máximo */
+    height: auto;
+    overflow: hidden;
+    margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: auto;
+}
+
+.carousel img {
+    background-color: #ffffff;
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+    flex-shrink: 0;
+    border-radius: 10px;
+}
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: black;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1;
+    border-radius: 50%;
+    font-size: 2em;
+    transition: color 0.3s ease;
+}
+
+/* Estilo del modal */
+.modal {
+    display: none; /* Ocultar el modal por defecto */
+    position: fixed;
+    z-index: 9999; /* Asegurarse de que se sobreponga */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 80%;
+    margin: auto;
+    display: block;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    color: purple;
+}
+
+.prev-btn:active, .next-btn:active {
+    color: darkviolet;
+}
+
+
+
+/* Estilo para los botones de GitHub y Video debajo del carrusel */
+.github_tesis, .video_tesis {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 2em;
+    color: black;
+    padding: 10px;
+    border-radius: 50%;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px; /* Asegura que haya un espacio entre el carrusel y los botones */
+    width: 50px; /* Ajusta el tamaño de los botones si es necesario */
+    height: 50px;
+}
+
+.github_tesis, .video_tesis {
+    display: inline-block; /* Asegura que los elementos estén en línea */
+    margin-left: 150px; /* Espacio entre los botones */
+    float: right; /* Los hace flotar a la izquierda */
+}
+
+
+/* Efectos de hover */
+.github_tesis:hover, .video_tesis:hover {
+    color: purple;
+    transform: scale(1.1);
+}
+
+.github_tesis:active, .video_tesis:active {
+    color: darkviolet;
+}
+
+.github_tesis svg, .video_tesis svg {
+    width: 40px;
+    height: 40px;
+    fill: currentColor;
+}
+
+
+/* Media Query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    #proyectos h2 {
+        font-size: 1.5em; /* Reducir tamaño de la fuente en pantallas pequeñas */
+        top: -70px;
+    }
+
+    #proyectos h3 {
+        font-size: 1.5em; /* Reducir tamaño de la fuente en pantallas pequeñas */
+    }
+
+    .texto-y-carousel {
+        flex-direction: column; /* Apilar el texto y el carrusel en pantallas pequeñas */
+    }
+
+    .carousel-container {
+        width: 100%; /* Ajustar el ancho del carrusel en pantallas pequeñas */
+    }
+
+    .texto {
+        padding-right: 0;
+        text-align: center; /* Centra el texto en pantallas pequeñas */
+    }
+
+    .tesis_descripcion {
+        font-size: 0.9em; /* Reducir tamaño de la fuente en pantallas pequeñas */
+    }
+
+    .github_tesis, .video_tesis {
+        bottom: -40px;
+    }
+}
+
+/* Media Query para pantallas ultra pequeñas */
+@media (max-width: 480px) {
+    #proyectos {
+        padding: 10px;
+    }
+
+    .tesis_descripcion {
+        font-size: 0.8em;
+    }
+
+    .carousel img {
+        border-radius: 8px;
+    }
+
+    .github_tesis, .video_tesis {
+        font-size: 1.5em;
+    }
+}
