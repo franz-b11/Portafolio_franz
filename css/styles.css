@@ -611,7 +611,6 @@ ul {
 .example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
     background-color: #E4405F; /* Instagram */
 }
-
 /* Estilo del modal */
 .modal {
     display: none; /* Oculto por defecto */
@@ -623,75 +622,155 @@ ul {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
-  }
-  
-  .modal-content {
+}
+
+/* Estilo del contenido del modal */
+.modal-content {
     background-color: #fff;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 500px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .modal-content h2 {
+    margin: 10% auto; /* Ajustado para no estar tan centrado */
+    padding: 30px;
+    border: 1px solid #800080; /* Morado para el borde */
+    border-radius: 15px; /* Bordes redondeados elegantes */
+    width: 25%; /* Ancho ajustado */
+    max-width: 400px; /* Limitar el ancho máximo */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    font-family: 'Arial', sans-serif; /* Fuente más refinada */
+}
+
+/* Título del modal */
+.modal-content h2 {
     margin-top: 0;
-    font-size: 1.5rem;
-    color: #333;
-  }
-  
-  .modal-content label {
+    font-size: 1.8rem; /* Tamaño de fuente más grande para el título */
+    color: #800080; /* Morado */
+    text-align: center;
+}
+
+/* Estilo de las etiquetas dentro del modal */
+.modal-content label {
     display: block;
-    margin: 10px 0 5px;
+    margin: 12px 0 6px;
     font-weight: bold;
-  }
-  
-  .modal-content input,
-  .modal-content textarea {
+    font-size: 1rem;
+    color: #800080; /* Morado */
+}
+
+/* Estilo de los inputs y textarea */
+.modal-content input,
+.modal-content textarea {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 1px;
+    margin-bottom: 18px;
+    border: 1px solid #800080; /* Morado en el borde */
+    border-radius: 8px; /* Bordes redondeados */
     font-size: 1rem;
-  }
-  
-  .modal-content textarea {
+    color: #333;
+    background-color: #f9f9f9; /* Fondo suave para los campos */
+}
+
+/* Estilo para el textarea */
+.modal-content textarea {
     resize: vertical;
-    min-height: 100px;
-  }
-  
-  .button_enviar {
-    background-color: #007BFF;
-    color: #fff;
+    min-height: 120px; /* Alto mínimo */
+}
+
+/* ENVIAR*/ 
+
+.bt {
     border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .button_enviar:hover {
-    background-color: #0056b3;
-  }
-  
-  .close-btn {
-    color: #aaa;
+    user-select: none;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    background-color: #ae08bd; /* Morado */
+    box-shadow: #cacaca 2px 2px 10px 1px;
+    border-radius: 12px;
+    height: 40px;
+    width: 100px;
+    line-height: 40px; /* Asegura que el texto se alinee verticalmente */
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+/* Estilo del mensaje emergente (msg) */
+.msg {
+    height: 0;
+    width: 0;
+    border-radius: 2px;
+    position: absolute;
+    left: 15%;
+    top: 25%;
+}
+
+/* Estilo cuando el botón es presionado */
+.bt:active {
+    transition: all 0.001s ease;
+    background-color: #5d9fcd; /* Cambio de color en estado activo */
+    box-shadow: #97989a 0 0 0 0;
+    transform: translateX(1px) translateY(1px);
+}
+
+/* Animación para el mensaje cuando el botón es hover */
+.bt:hover .msg {
+    animation: msgRun 2s forwards;
+}
+
+/* Animación de expansión del mensaje */
+@keyframes msgRun {
+    0% {
+        border-top: #d6d6d9 0 solid;
+        border-bottom: #f2f2f5 0 solid;
+        border-left: #f2f2f5 0 solid;
+        border-right: #f2f2f5 0 solid;
+    }
+
+    20% {
+        border-top: #d6d6d9 14px solid;
+        border-bottom: #f2f2f5 14px solid;
+        border-left: #f2f2f5 20px solid;
+        border-right: #f2f2f5 20px solid;
+    }
+
+    25% {
+        border-top: #d6d6d9 12px solid;
+        border-bottom: #f2f2f5 12px solid;
+        border-left: #f2f2f5 18px solid;
+        border-right: #f2f2f5 18px solid;
+    }
+
+    80% {
+        border-top: transparent 12px solid;
+        border-bottom: transparent 12px solid;
+        border-left: transparent 18px solid;
+        border-right: transparent 18px solid;
+    }
+
+    100% {
+        transform: translateX(150px);
+        border-top: transparent 12px solid;
+        border-bottom: transparent 12px solid;
+        border-left: transparent 18px solid;
+        border-right: transparent 18px solid;
+    }
+}
+
+
+/* Estilo del botón de cerrar */
+.close-btn {
+    color: #800080;
     float: right;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
     cursor: pointer;
-  }
-  
-  .close-btn:hover,
-  .close-btn:focus {
-    color: #000;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #333;
     text-decoration: none;
-  }
-  
+}
+
 
 /*--------------- proyectos ---------------*/
 
