@@ -117,3 +117,25 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("contactModal");
+    const openModal = document.getElementById("openModal");
+    const closeModal = document.querySelector(".close-btn");
+    const form = document.getElementById("contactForm");
+  
+    // Abrir el modal
+    openModal.addEventListener("click", (e) => {
+      e.preventDefault();
+      modal.style.display = "flex";
+    });
+  
+    // Cerrar el modal
+    closeModal.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+  
+  });
+  
