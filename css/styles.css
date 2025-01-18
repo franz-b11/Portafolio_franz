@@ -1,6 +1,6 @@
 /* styles.css */
 body {
-    font-family: 'Roboto', sans-serif; /* Aplica la fuente Roboto */
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     color: #f4f4f4;
@@ -11,26 +11,28 @@ header {
     background-color: rgb(255, 255, 255);
     color: rgb(32, 0, 0);
     padding: 1rem 6rem;
-    font-family: 'Roboto', sans-serif; /* Asegura que el encabezado también use Roboto */
+    font-family: 'Roboto', sans-serif;
+    position: relative; /* Asegura que los elementos dentro del header puedan posicionarse */
 }
 
 header nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Espacio entre el logo y el menú */
     align-items: center;
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
 }
 
 header .hero-image {
     position: absolute;
-    left: 5%; /* Ajusta su posición horizontal */
-    width: 50px; 
-    height: auto; 
-    border-radius: 5px; 
-    background-color: rgba(75, 0, 130, 0.7); /* Fondo morado alrededor de la imagen */
+    left: 5%;
+    width: 50px;
+    height: auto;
+    border-radius: 5px;
+    background-color: rgba(75, 0, 130, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil para resaltar la imagen */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 header ul {
@@ -39,6 +41,7 @@ header ul {
     gap: 1rem;
     margin: 0;
     padding: 0;
+    margin-left: auto; /* Esto alinea el ul a la derecha */
 }
 
 header a {
@@ -46,7 +49,7 @@ header a {
     text-decoration: none;
     font-weight: bold;
     font-size: 1rem;
-    font-family: 'Roboto', sans-serif; /* Asegura que los enlaces usen Roboto */
+    font-family: 'Roboto', sans-serif;
 }
 
 header a:hover {
