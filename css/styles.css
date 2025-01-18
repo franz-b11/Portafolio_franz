@@ -21,6 +21,8 @@ header nav {
 }
 
 header .hero-image {
+    position: absolute;
+    left: 5%; /* Ajusta su posición horizontal */
     width: 50px; 
     height: auto; 
     border-radius: 5px; 
@@ -263,7 +265,7 @@ header a:hover {
 text-decoration: none;
 color: #fff;
 display: inline-block;
-font-family: sans-serif;
+font-family: 'Roboto', sans-serif;
 font-weight: 600;
 border-radius: 50px;
 border: 2px solid rgba(75, 0, 130, 0.7);
@@ -343,7 +345,7 @@ transition: all .3s ease;
     border-radius: 100px;
     font-weight: 600;
     color: #000000;
-    box-shadow: 0 0 0 2px #462e85;
+    box-shadow: 0 0 0 2px #ffffff;
     cursor: pointer;
     overflow: hidden;
     transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
@@ -631,18 +633,21 @@ ul {
     padding: 30px;
     border: 1px solid #800080; /* Morado para el borde */
     border-radius: 15px; /* Bordes redondeados elegantes */
-    width: 25%; /* Ancho ajustado */
-    max-width: 400px; /* Limitar el ancho máximo */
+    width: clamp(60%, 90%, 25%); /* Ancho ajustado */
+    max-width: 500px; /* Limitar el ancho máximo */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra suave */
-    font-family: 'Arial', sans-serif; /* Fuente más refinada */
+    font-family: 'Roboto', sans-serif; /* Fuente más refinada */
 }
 
-/* Título del modal */
 .modal-content h2 {
     margin-top: 0;
-    font-size: 1.8rem; /* Tamaño de fuente más grande para el título */
-    color: #800080; /* Morado */
+    font-size: clamp(1rem, 4vw, 2.5rem);
+    color: #800080;
     text-align: center;
+    max-width: 90%; /* Limita el ancho del texto */
+    word-wrap: break-word; /* Ajusta las palabras largas */
+    margin-left: auto;
+    margin-right: auto; /* Centra el texto horizontalmente */
 }
 
 /* Estilo de las etiquetas dentro del modal */
@@ -922,9 +927,6 @@ ul {
     text-decoration: none;
     cursor: pointer;
 }
-
-
-
 
 .prev-btn {
     left: 10px;
