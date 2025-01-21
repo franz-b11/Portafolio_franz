@@ -584,8 +584,8 @@ ul {
 }
 
 /* Especificar el color para cada red social */
-.example-2 .icon-content a[data-social="twitter"] .filled {
-    background-color: #8c9abe; /* Twitter */
+.example-2 .icon-content a[data-social="linkedin"] .filled {
+    background-color: #0048ff; /* Twitter */
 }
 
 .example-2 .icon-content a[data-social="whatsapp"] .filled {
@@ -601,8 +601,8 @@ ul {
 }
 
 /* Tooltip */
-.example-2 .icon-content a[data-social="twitter"] ~ .tooltip {
-    background-color: #8c9abe; /* Twitter */
+.example-2 .icon-content a[data-social="linkedin"] ~ .tooltip {
+    background-color: #0048fd; /* linkedin */
 }
 
 .example-2 .icon-content a[data-social="whatsapp"] ~ .tooltip {
@@ -616,7 +616,7 @@ ul {
 .example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
     background-color: #E4405F; /* Instagram */
 }
-/* Estilo del modal */
+/* ------------------GMAIL------------------------------------------ */
 .modal {
     display: none; /* Oculto por defecto */
     position: fixed;
@@ -1042,3 +1042,248 @@ ul {
         font-size: 1.5em;
     }
 }
+
+
+/*----------------------------  Proyecto, portafolio ------------------------------------------------*/
+#proyecto_portafolio {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    height: auto;
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto 5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en filas si es necesario */
+}
+
+#proyecto_portafolio h3 {
+    color: #010003;
+    font-size: 2em;
+    padding: 5px 10px;
+    border-radius: 8px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+.proyecto_portafolio h3 svg {
+    margin-left: 10px; /* Espacio entre el texto y el icono */
+    width: 20px; /* Puedes ajustar el tamaño */
+    height: 20px;
+}
+
+.texto-y-carousel_proyecto_portafolio {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap; /* Permite que el contenido se ajuste en pantallas pequeñas */
+}
+
+.texto {
+    flex: 1;
+    padding-right: 80px;
+    text-align: center;
+    max-width: 600px; /* Controla el ancho del texto */
+    margin: 0 auto ;
+}
+
+.portafolio_descripcion {
+    font-size: 1em;
+    color: #000000;
+    line-height: 2.5;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.carousel-container_proyecto_portafolio {
+    position: relative;
+    width: 100%; /* Cambiado a 100% para que el carrusel ocupe todo el ancho disponible */
+    max-width: 300px; /* Establece un ancho máximo */
+    height: auto;
+    overflow: hidden;
+    margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.carousel_proyecto_portafolio {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: auto;
+}
+
+.carousel_proyecto_portafolio img {
+    background-color: #ffffff;
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+    flex-shrink: 0;
+    border-radius: 10px;
+}
+
+.prev-btn-porta, .next-btn-porta {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: black;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1;
+    border-radius: 50%;
+    font-size: 2em;
+    transition: color 0.3s ease;
+}
+
+/* Estilo del modal */
+.modal_proyecto_portafolio {
+    display: none; /* Ocultar el modal por defecto */
+    position: fixed;
+    z-index: 9999; /* Asegurarse de que se sobreponga */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal_proyecto_portafolio-content {
+    max-width: 90%;
+    max-height: 80%;
+    margin: auto;
+    display: block;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.prev-btn-porta {
+    left: 10px;
+}
+
+.next-btn-porta {
+    right: 10px;
+}
+
+.prev-btn-porta:hover, .next-btn-porta:hover {
+    color: purple;
+}
+
+.prev-btn-porta:active, .next-btn-porta:active {
+    color: darkviolet;
+}
+
+
+
+/* Estilo para los botones de GitHub y Video debajo del carrusel */
+.github_portafolio{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 2em;
+    color: black;
+    padding: 10px;
+    border-radius: 50%;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px; /* Asegura que haya un espacio entre el carrusel y los botones */
+    width: 50px; /* Ajusta el tamaño de los botones si es necesario */
+    height: 50px;
+}
+
+.github_portafolio{
+    display: inline-block; /* Asegura que los elementos estén en línea */
+    margin-left: 150px; /* Espacio entre los botones */
+    float: right; /* Los hace flotar a la izquierda */
+}
+
+
+/* Efectos de hover */
+.github_portafolio:hover{
+    color: purple;
+    transform: scale(1.1);
+}
+
+.github_portafolio:active{
+    color: darkviolet;
+}
+
+.github_portafolio svg{
+    width: 40px;
+    height: 40px;
+    fill: currentColor;
+}
+
+
+/* Media Query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    #proyecto_portafolio h3 {
+        font-size: 1.5em; /* Reducir tamaño de la fuente en pantallas pequeñas */
+    }
+
+    .texto-y-carousel_proyecto_portafolio {
+        flex-direction: column; /* Apilar el texto y el carrusel en pantallas pequeñas */
+    }
+
+    .carousel_proyecto_portafolio-container {
+        width: 100%; /* Ajustar el ancho del carrusel en pantallas pequeñas */
+    }
+
+    .texto {
+        padding-right: 0;
+        text-align: center; /* Centra el texto en pantallas pequeñas */
+    }
+
+    .portafolio_descripcion {
+        font-size: 0.9em; /* Reducir tamaño de la fuente en pantallas pequeñas */
+    }
+
+    .github_portafolio{
+        bottom: -40px;
+    }
+}
+
+/* Media Query para pantallas ultra pequeñas */
+@media (max-width: 480px) {
+    #proyectos {
+        padding: 10px;
+    }
+
+    .portafolio_descripcion {
+        font-size: 0.8em;
+    }
+
+    .carousel_proyecto_portafolio-container img {
+        border-radius: 8px;
+    }
+
+    .github_portafolio{
+        font-size: 1.5em;
+    }
+}
+
