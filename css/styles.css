@@ -593,7 +593,7 @@ ul {
 }
 
 .example-2 .icon-content a[data-social="email"] .filled {
-    background-color: #a4a208; /* Email */
+    background-color: #fffb00; /* Email */
 }
 
 .example-2 .icon-content a[data-social="instagram"] .filled {
@@ -610,7 +610,7 @@ ul {
 }
 
 .example-2 .icon-content a[data-social="email"] ~ .tooltip {
-    background-color: #a4a208; /* Email */
+    background-color: #fffb00; /* Email */
 }
 
 .example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
