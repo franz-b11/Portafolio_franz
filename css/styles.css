@@ -131,7 +131,7 @@ header a:hover {
     display: flex;
     justify-content: center;
     align-items: center; /* Centra la imagen */
-    width: 40%;
+    width: 35%;
     overflow: hidden;
     border-radius: 50%; /* Hace que el contenedor sea circular */
     aspect-ratio: 1; /* Asegura que sea un círculo perfecto */
